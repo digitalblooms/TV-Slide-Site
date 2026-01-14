@@ -23,29 +23,34 @@
             width: 100%;
             height: 100%;
             border: none;
+            /* Ensure the iframe layer is clickable if needed, though strictly visual here */
+            pointer-events: auto; 
         }
     </style>
 </head>
 <body>
 
     <iframe 
-        src="https://www.canva.com/design/DAF8G6p8MsA/9QF8PXhyC_keHkf5GZieoQ/watch?embed" 
-        allowfullscreen="allowfullscreen" 
-        allow="fullscreen">
+        id="canvaFrame"
+        src="https://www.canva.com/design/DAF8G6p8MsA/9QF8PXhyC_keHkf5GZieoQ/watch?embed&autoplay=1" 
+        allow="autoplay; fullscreen; encrypted-media; picture-in-picture" 
+        allowfullscreen>
     </iframe>
 
     <script>
         // --- CONFIGURATION ---
-        // How long is your TOTAL presentation? 
-        // Example: 5 slides x 10 seconds = 50 seconds.
-        // I set this to 60 seconds (60000ms) as a placeholder.
-        // CHANGE THIS NUMBER to match your total slide duration.
+        // Set this to match the TOTAL duration of your Canva presentation loop.
+        // Example: If you have 6 slides of 10 seconds each, set this to 60.
         const totalDurationSeconds = 60; 
 
         // ---------------------
-        const refreshTime = (totalDurationSeconds * 1000) + 2000; // Adds a 2-second buffer
+        // We add a small buffer (2000ms) to ensure the loop finishes before we reload.
+        const refreshTime = (totalDurationSeconds * 1000) + 2000;
+
+        console.log("Presentation will reload in " + refreshTime + " milliseconds.");
 
         setTimeout(function(){
+            // Reloads the page from the server to keep memory fresh (Digital Signage best practice)
             window.location.reload(true);
         }, refreshTime);
     </script>
