@@ -29,10 +29,26 @@
 <body>
 
     <iframe 
-        src="https://www.canva.com/design/DAF8G6p8MsA/9QF8PXhyC_keHkf5GZieoQ/view?embed" 
+        src="https://www.canva.com/design/DAF8G6p8MsA/9QF8PXhyC_keHkf5GZieoQ/watch?embed" 
         allowfullscreen="allowfullscreen" 
         allow="fullscreen">
     </iframe>
+
+    <script>
+        // --- CONFIGURATION ---
+        // How long is your TOTAL presentation? 
+        // Example: 5 slides x 10 seconds = 50 seconds.
+        // I set this to 60 seconds (60000ms) as a placeholder.
+        // CHANGE THIS NUMBER to match your total slide duration.
+        const totalDurationSeconds = 60; 
+
+        // ---------------------
+        const refreshTime = (totalDurationSeconds * 1000) + 2000; // Adds a 2-second buffer
+
+        setTimeout(function(){
+            window.location.reload(true);
+        }, refreshTime);
+    </script>
 
 </body>
 </html>
