@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Slideshow</title>
+    <title>Bloomsbury Football Digital Signage</title>
     <style>
-        /* This ensures the slide takes up 100% of the screen */
+        /* Force the page to be 100% width and height with no scrollbars */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden; /* Prevents scrollbars on TV */
-            background-color: #000; /* Black background just in case */
+            overflow: hidden; 
+            background-color: #000;
         }
         
+        /* Force the iframe to fill the screen perfectly */
         iframe {
             position: absolute;
             top: 0;
@@ -28,9 +29,9 @@
 <body>
 
     <iframe 
-        src="https://www.canva.com/design/DAF8G6p8MsA/9QF8PXhyC_keHkf5GZieoQ/view" 
-        allowfullscreen="true" 
-        allow="fullscreen; autoplay">
+        src="https://www.canva.com/design/DAF8G6p8MsA/9QF8PXhyC_keHkf5GZieoQ/view?embed" 
+        allowfullscreen="allowfullscreen" 
+        allow="fullscreen">
     </iframe>
 
 </body>
